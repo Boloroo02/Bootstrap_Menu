@@ -1,0 +1,108 @@
+:root{
+  --brand-500:#f48fb1;   /* үндсэн ягаан */
+  --brand-600:#ec6f93;   /* hover */
+  --brand-700:#d85a88;   /* active */
+  --brand-border:#ffd6e3;
+
+  /* Bootstrap variables override */
+  --bs-primary:var(--brand-500);
+  --bs-primary-rgb:244,143,177;
+  --bs-link-color:var(--brand-700);
+  --bs-link-hover-color:var(--brand-600);
+}
+
+/* Ерөнхий */
+html{scroll-behavior:smooth;}
+body{
+  background:#fff7fa;
+  color:#212529;
+}
+section{scroll-margin-top:90px;}
+
+/* Navbar */
+.navbar.theme-navbar{
+  background:#fff;
+  border-bottom:1px solid var(--brand-border);
+}
+.navbar.theme-navbar .navbar-brand{color:var(--brand-700);}
+.navbar.theme-navbar .nav-link{
+  color:#212529;
+  border-radius:.5rem;
+  padding:.5rem .75rem;
+  transition:background .2s ease,color .2s ease;
+}
+.navbar.theme-navbar .nav-link:hover,
+.navbar.theme-navbar .nav-link.active{
+  background:#ffe9f1;
+  color:var(--brand-700);
+  font-weight:600;
+}
+/* Toggler рам/фокус */
+.navbar-light .navbar-toggler{border-color:var(--brand-border);}
+.navbar-light .navbar-toggler:focus{box-shadow:0 0 0 .2rem #ffe9f1;}
+
+/* Offcanvas (sidebar) */
+.offcanvas-pink{background:#fff;border-right:1px solid var(--brand-border);}
+.offcanvas-pink .offcanvas-title{color:var(--brand-700);}
+.offcanvas-pink .nav-link{color:#212529;padding:.75rem 1rem;border-radius:.5rem;}
+.offcanvas-pink .nav-link:hover,
+.offcanvas-pink .nav-link:focus,
+.offcanvas-pink .nav-link.active{background:#ffe9f1;color:var(--brand-700);}
+.offcanvas-backdrop.show{opacity:.2;}
+
+/* Товч */
+.btn-primary{
+  --bs-btn-bg:var(--brand-500);
+  --bs-btn-border-color:var(--brand-500);
+  --bs-btn-hover-bg:var(--brand-600);
+  --bs-btn-hover-border-color:var(--brand-600);
+  --bs-btn-active-bg:var(--brand-700);
+  --bs-btn-active-border-color:var(--brand-700);
+  border-radius:999px;
+}
+
+/* List group */
+.list-group-item{
+  border-color:var(--brand-border);
+  background:#fff;
+}
+
+/* Гарчигийн доогуур шугам + өнгө */
+section>h2{
+  border-bottom:1px solid var(--brand-border);
+  padding-bottom:.5rem;
+  color:var(--brand-700);
+}
+
+/* ================= НЭГДСЭН ҮНЭНИЙ PILL ================= */
+/* 1) .badge ашигласан мөрүүд */
+.badge{font-size:inherit;}
+.badge.bg-primary{background-color:var(--brand-500) !important;color:#fff !important;}
+/* 2) Хоёр <span>-тай мөрүүдийн баруун талын span */
+.list-group-item.d-flex>span:last-child{
+  background:var(--brand-500);
+  color:#fff;
+}
+/* 3) Аль алинд нь ижил хэмжээ, хэлбэр, жигд бичиг */
+.badge.bg-primary,
+.list-group-item.d-flex>span:last-child{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:2.2rem;        /* тогтмол өндөр */
+  min-width:7.5rem;     /* тогтмол өргөн */
+  padding:0 .9rem;      /* босоо padding=0 (өндөр тогтмол) */
+  border-radius:999px;
+  font-weight:700;
+  font-size:.95rem;
+  line-height:1;
+  text-align:center;
+  white-space:nowrap;
+}
+@media(max-width:576px){
+  body{background-attachment:scroll;}
+  .hero-section,.hero,#menu-hero{padding-top:2.5rem;padding-bottom:2.5rem;}
+  .card-img-top{height:180px;}
+  img{max-width:100%;}
+  h1{font-size:1.8rem;}
+}
